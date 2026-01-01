@@ -1,0 +1,52 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+    "mode": "dock",
+    "position": "top", // (top|bottom|left|right)
+    "height": 30, // (to be removed for auto height)
+    "width": "auto",
+    "spacing": 3, // Gaps between modules
+    "modules-left": [
+      "custom/arch",
+    "hyprland/workspaces",
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "cpu",
+      "memory",
+      "temperature",
+    ],
+    "custom/arch": {
+      "format": "󰣇",
+      "tooltip": true,
+      "tooltip-format": "btw"
+    },
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": true,
+      "warp-on-scroll": false,
+      "format": "{name}",
+    },
+    "clock": {
+      "format": "{:%d | %H:%M}",
+      "tooltip": false,
+    },
+    "cpu": {
+      "format": "  {usage}%",
+      "on-click": "alacritty -e btop",
+    },
+    "memory": {
+      "format": "  {}%",
+      "on-click": "alacritty -e btop",
+    },
+    "temperature": {
+      "interval": 10,
+      "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+      "critical-threshold": 100,
+      "format-critical": " {temperatureC}",
+      "format": " {temperatureC}°C",
+      "on-click": "alacritty -e btop",
+    },
+}
