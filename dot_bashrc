@@ -82,9 +82,11 @@ install_bashrc_support() {
 # Color definitions for prompt
 _reset='\[\e[0m\]'
 _bold_brown='\[\e[1;33m\]'
+_bold_purple='\[\e[1;35m\]'
 _bold_green='\[\e[1;32m\]'
 _bold_red='\[\e[1;31m\]'
 _green='\[\e[0;32m\]'
+_purple='\[\e[0;35m\]'
 _red='\[\e[0;31m\]'
 _teal='\[\e[0;36m\]'
 _white='\[\e[0;37m\]'
@@ -111,7 +113,7 @@ function _git_prompt {
 function _venv_prompt {
   if [[ -n "$VIRTUAL_ENV" ]]; then
     local venv_name=$(basename "$VIRTUAL_ENV")
-    echo "[${_green}${venv_name}${_reset}]"
+    echo "[${_purple}${venv_name}${_reset}]"
   else
     echo "[${_white}raw${_reset}]"
   fi
