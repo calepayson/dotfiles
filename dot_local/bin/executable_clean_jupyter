@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Get all user-installed kernels (excluding python3 default)
+kernels=$(jupyter kernelspec list --json | python -c "
+import json, sys
+data = json.load(sys.stdin)
+for name, info in data['kernelspecs'].items():
+    if name != 'python3' and '.local/share/jupyter' in info['resource_dir']:
+        print(name)
+")
+
+if [ -z "$kernels" ]; then
+    echo "No user kernels to remove"
+    exit 0
+fi
+
+echo "Removing kernels:"
+echo "$kernels"
+echo
+
+for kernel in $kernels; do
+    jupyter kernelspec uninstall -y "$kernel"
+done
+
+echo "Done"
