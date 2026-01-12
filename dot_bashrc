@@ -75,6 +75,8 @@ install_bashrc_support() {
   echo "Done. Restart your shell or run 'source ~/.bashrc'"
 }
 
+export PATH="$HOME/.local/bin:$PATH"
+
 ##########
 # PROMPT #
 ##########

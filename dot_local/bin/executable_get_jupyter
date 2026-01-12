@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Get project name from current directory
+PROJECT_NAME=$(basename "$PWD")_venv
+
+# Install packages
+pip install jupyter jupyterlab-vim ipykernel
+
+# Register kernel
+python -m ipykernel install --user --name="$PROJECT_NAME" --display-name="$PROJECT_NAME"
+
+echo "Kernel '$PROJECT_NAME' registered successfully"
