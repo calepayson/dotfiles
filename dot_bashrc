@@ -61,6 +61,9 @@ alias ls='ls -aFh --color=always'
 # Add colors to grep
 alias grep='grep --color=auto'
 
+# Get battery 
+alias bat='cat /sys/class/power_supply/BAT0/capacity'
+
 # Automatically install the needed support files for this .bashrc file
 install_bashrc_support() {
   local packages=(
