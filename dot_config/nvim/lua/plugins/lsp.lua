@@ -28,6 +28,13 @@ return {
 				cmd = { "pyright-langserver", "--stdio" },
 				filetypes = { "python" },
 				root_markers = { "pyproject.toml", "setup.py", ".git" },
+				settings = {
+					python = {
+						analysis = {
+							extraPaths = { "src" },
+						},
+					},
+				},
 			}
 
 			vim.lsp.config.lua_ls = {
