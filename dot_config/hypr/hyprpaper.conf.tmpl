@@ -1,0 +1,31 @@
+{{ if eq .machine "desktop" -}}
+wallpaper {
+    monitor = VGA-1
+    path = /home/cale/.config/hypr/wallpapers/fog_right.jpg
+}
+
+wallpaper {
+    monitor = HDMI-A-1
+    path = /home/cale/.config/hypr/wallpapers/fog_center.jpg
+}
+
+wallpaper {
+    monitor = HDMI-A-2
+    path = /home/cale/.config/hypr/wallpapers/fog_left.jpg
+}
+{{ else -}}
+wallpaper {
+    monitor = eDP-1
+    path = /home/cale/.config/hypr/wallpapers/fog_left.jpg
+}
+
+wallpaper {
+    monitor = DP-2
+    path = /home/cale/.config/hypr/wallpapers/fog_center.jpg
+}
+
+wallpaper {
+    monitor = DP-1
+    path = /home/cale/.config/hypr/wallpapers/fog_right.jpg
+}
+{{ end -}}

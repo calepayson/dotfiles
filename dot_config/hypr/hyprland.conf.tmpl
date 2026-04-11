@@ -3,9 +3,15 @@
 ################
 
 # See https://wiki.hypr.land/Configuring/Monitors/
-monitor = VGA-1, preferred, 1920x0, auto
+{{ if eq .machine "desktop" -}}
 monitor = HDMI-A-1, preferred, 0x0, auto
+monitor = VGA-1, preferred, 1920x0, auto
 monitor = HDMI-A-2, preferred, -900x0, 1.2, transform, 1
+{{ else -}}
+monitor = eDP-1, preferred, -1366x0, auto
+monitor = DP-2, preferred, 0x0, auto
+monitor = DP-1, preferred, 1920x0, 1.2, transform, 1
+{{ end -}}
 monitor=,preferred,auto,auto
 
 ###################
