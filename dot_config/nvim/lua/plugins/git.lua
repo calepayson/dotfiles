@@ -17,6 +17,7 @@ return {
 		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
 		keys = {
 			{ "<leader>do", "<cmd>DiffviewOpen<cr>", desc = "Diffview open" },
+			{ "<leader>dm", "<cmd>DiffviewOpen main...HEAD<cr>", desc = "Diff branch vs main" },
 			{ "<leader>dh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
 			{ "<leader>dq", "<cmd>DiffviewClose<cr>", desc = "Diffview close" },
 		},
