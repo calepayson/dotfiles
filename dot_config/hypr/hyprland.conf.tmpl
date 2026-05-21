@@ -39,6 +39,10 @@ exec-once = hyprpaper
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
 
+xwayland {
+    force_zero_scaling = true
+}
+
 #####################
 ### LOOK AND FEEL ###
 #####################
@@ -115,7 +119,6 @@ animations {
 }
 
 dwindle {
-    pseudotile = true # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
     preserve_split = true # You probably want this
 }
 
